@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Garamond;
+            background-image: url('{{ url_for("static", filename="sky.jpg") }}');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        a {
+            padding-right: 20px;
+        }
+        
+        .container {
+            width: 60%;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container1 {
+            width: 40%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px; 
+            box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.8); 
+            text-align: center;
+            margin: auto;
+            margin-top: 180px;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .nav-bar img {
+            height: 100%;
+            max-width: 100%;
+        }
+
+        .nav-bar a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 1.1;
+        }
+
+        .header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+        
+        .feature-text {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 1px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-page">
+        <div class="nav-bar">
+            <img src="{{ url_for('static', filename='logo1.png') }}">
+            <div>
+                <a href="/logout">Logout</a>
+                <a href="/">Feature</a>
+                <a href='#'>About Us</a>
+                <a href='#'>Help</a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <form method="POST" action="{{ url_for('login') }}">
+                <div class="header">
+                    <h1>HOME</h1>
+                </div>
+                <div class="options">
+                    <div class="container" onclick="window.location.href='/backup'">
+                        <div class="feature-text">Backup</div>
+                    </div>
+                    <div class="container" onclick="window.location.href='/restore'">
+                        <div class="feature-text">Restore</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Sri Sivasubramaniya Nadar College of Engineering. All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>

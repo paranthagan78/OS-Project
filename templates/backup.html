@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup</title>
+    <style>
+        body {
+            font-family: Garamond;
+            background-image: url('{{ url_for("static", filename="sky.jpg") }}');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            padding-right: 20px;
+        }
+
+        .container1 {
+            width: 40%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.8);
+            text-align: center;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .nav-bar img {
+            height: 100%;
+            max-width: 100%;
+        }
+
+        .nav-bar a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+
+        .feature-text {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 1px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        label {
+            font-size: 16px;
+            color: white;
+            width: 30%;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            font-family: Garamond;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            width: 65%;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 300px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: center;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-page">
+        <div class="nav-bar">
+            <img src="{{ url_for('static', filename='logo1.png') }}">
+            <div>
+                <a href="/logout">Logout</a>
+                <a href='#'>About Us</a>
+                <a href='#'>Help</a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="header">
+                <h1>Backup</h1>
+            </div>
+            <br>
+            <form method="POST" action="{{ url_for('backup_route') }}">
+                <div class="form-group">
+                    <label for="source">Source Directory</label>
+                    <input type="text" id="source" name="source" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Backup Destination</label>
+                    <input type="text" id="destination" name="destination" required>
+                </div>
+                <div class="form-group">
+                    <label for="compress">Compress</label>
+                    <input type="checkbox" id="compress" name="compress">
+                </div>
+                <div class="form-group">
+                    <label for="encrypt">Encrypt</label>
+                    <input type="checkbox" id="encrypt" name="encrypt">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password (For Encryption)</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <button type="submit">Backup</button>
+            </form>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Sri Sivasubramaniya Nadar College of Engineering. All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>
