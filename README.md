@@ -58,6 +58,6 @@ Design a comprehensive backup system that allows users to:
 - Improve **UI/UX** with drag-and-drop file selection.
 - Add **multi-platform support** (Windows, macOS, Linux).
 
----
+## 👨‍💻 Author
 
-> **Made with ❤️ for Operating Systems Project**
+- **Paranthagan S**  
