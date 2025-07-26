@@ -51,6 +51,16 @@ Design a comprehensive backup system that allows users to:
 └── restore.py
 </pre>
 
+## Screenshots of the Interface
+
+<img width="1919" height="913" alt="image" src="https://github.com/user-attachments/assets/29e0b348-40bf-4ecb-9ee7-d782d7336477" />
+<img width="1919" height="911" alt="image" src="https://github.com/user-attachments/assets/589b4012-a6fb-491b-9e74-969e2bc082e9" />
+<img width="1919" height="1018" alt="image" src="https://github.com/user-attachments/assets/c4653620-5b3f-44a8-9dd4-9e4bf808279b" />
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/afdfa995-09c6-4077-9838-a6af8f45e3ac" />
+<img width="1919" height="1016" alt="image" src="https://github.com/user-attachments/assets/437fe14c-b69c-4785-b796-c980da359adb" />
+
+
+
 ## 🚀 Future Enhancements
 - Support for **cloud-based backups**.
 - Implement **automated/scheduled backups**.
